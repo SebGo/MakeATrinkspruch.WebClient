@@ -1,0 +1,29 @@
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main-content"
+        "footer";
+
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+
+    background-image: url("../assets/img/beer-foam.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #fda502;
+}
+
+/* Style the header */
+.header {
+    grid-area: header;
+}
+
+.main-content {
+    grid-area: main-content;
+    overflow: auto;
+}
+/* Style the footer */
+.footer {
+    grid-area: footer;
+}

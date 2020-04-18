@@ -9,6 +9,7 @@ import { Toast } from 'src/models/toast.model';
 })
 export class MainComponent implements OnInit {
     public toast: Toast;
+
     constructor(private toastService: ToastService) {
         this.toast = new Toast('', '', false, []);
     }

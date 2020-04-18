@@ -1,7 +1,43 @@
-.spacer {
-    flex: 1 1 auto;
+.main-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 15% 1fr 15%;
+    grid-template-areas: ". toast-cell next-toast-cell";
+    height: 100%;
+
+    align-items: stretch;
 }
 
-.mat-toolbar {
-    background: transparent;
+.toast-cell {
+    grid-area: toast-cell;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next-toast-cell {
+    grid-area: next-toast-cell;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mat-icon-button.large {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+
+    .mat-icon {
+        font-size: 80px;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+    }
+}
+
+.toast-text {
+    font-size: 3vw;
 }

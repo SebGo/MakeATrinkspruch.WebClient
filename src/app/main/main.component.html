@@ -1,20 +1,14 @@
-<mat-toolbar>
-    <span>Make A Trinkspruch</span>
-
-    <!-- This fills the remaining space of the current row -->
-    <span class="spacer"></span>
-
-    <span>Login</span>
-</mat-toolbar>
-
-<div>{{ toast.toastText }}</div>
-<div *ngIf="toast.tags.length > 0">
-    <div>Tags:</div>
-    <div *ngFor="let tag of toast.tags">
-        {{ tag.tagName }}
+<div class="main-container">
+    <div class="toast-cell">
+        <div class="toast-text">
+            {{ toast.toastText }}
+        </div>
     </div>
-</div>
 
-<button (click)="getNewToast()">
-    Neuer Toast
-</button>
+    <div class="next-toast-cell">
+        <button mat-icon-button class="large" (click)="getNewToast()">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+
+</div>

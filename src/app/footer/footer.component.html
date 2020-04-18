@@ -1,0 +1,15 @@
+<mat-toolbar>
+    <div *ngIf="router.url !== '/imprint'">
+        <button id="imprint-button" mat-button routerLink="/imprint">
+            Impressum
+        </button>
+    </div>
+    <div *ngIf="router.url !== '/make-a-trinkspruch'">
+        <button id="imprint-button" mat-button routerLink="/make-a-trinkspruch">
+            Home
+        </button>
+    </div>
+    <button id="login-button" mat-button>
+        Login
+    </button>
+</mat-toolbar>
