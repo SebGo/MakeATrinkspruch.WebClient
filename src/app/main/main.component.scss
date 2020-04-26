@@ -1,11 +1,19 @@
 .main-container {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-columns: 15% 1fr 15%;
-    grid-template-areas: ". toast-cell next-toast-cell";
+    grid-template-areas:
+        "    .   .  filter-cell"
+        ".   toast-cell next-toast-cell";
     height: 100%;
-
     align-items: stretch;
+}
+
+.filter-cell {
+    grid-area: filter-cell;
+    margin: 16px;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .toast-cell {

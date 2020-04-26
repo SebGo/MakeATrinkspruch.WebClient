@@ -1,13 +1,4 @@
 <mat-toolbar>
     <img class="logo" src="assets/img/logo.png" routerLink="">
     <span routerLink="">Make A Trinkspruch</span>
-
-    <!-- This fills the remaining space of the current row -->
-    <span class="spacer"></span>
-    <div *ngIf="router.url === '/make-a-trinkspruch'">
-        <button mat-stroked-button (click)="openFilterDialog()">
-            <mat-icon>filter_list</mat-icon>
-            <span class="icon-button-text">FILTER</span>
-        </button>
-    </div>
 </mat-toolbar>

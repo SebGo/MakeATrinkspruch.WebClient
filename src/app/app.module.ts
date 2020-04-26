@@ -14,6 +14,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { ImprintComponent } from './imprint/imprint.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ToastFilterComponent } from './toast-filter/toast-filter.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -33,6 +38,10 @@ import { ToastFilterComponent } from './toast-filter/toast-filter.component';
         MatButtonModule,
         MatIconModule,
         MatDialogModule,
+        MatListModule,
+        MatCheckboxModule,
+        MatSelectModule,
+        FormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

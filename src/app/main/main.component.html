@@ -1,6 +1,14 @@
 <div class="main-container">
+    <div class="filter-cell">
+        <div *ngIf="router.url === '/make-a-trinkspruch'">
+            <button mat-stroked-button (click)="openFilterDialog()" onclick="this.blur()">
+                <mat-icon>filter_list</mat-icon>
+                <span class="icon-button-text">FILTER</span>
+            </button>
+        </div>
+    </div>
     <div class="toast-cell">
-        <div class="toast-text">
+        <div class="toast-text" *ngIf="(toast$|async) let toast">
             {{ toast.toastText }}
         </div>
     </div>

@@ -1,9 +1,14 @@
-<h1 mat-dialog-title>Filter nach Kategorien</h1>
-<div mat-dialog-content>
-    <p>What's your favorite animal?</p>
+<h1 mat-dialog-title>Kategorien wählen</h1>
 
+<div mat-dialog-content>
+    <mat-selection-list #tagsList [(ngModel)]="selectedOptions">
+        <mat-list-option *ngFor="let tag of (tagsData$|async)" [value]="tag.id">
+            {{tag.tagName}}
+        </mat-list-option>
+    </mat-selection-list>
 </div>
+
 <div mat-dialog-actions>
-    <button mat-button (click)="onCancelClick()">Abbrechen</button>
-    <button mat-button [mat-dialog-close]="" cdkFocusInitial>Filter setzen</button>
+    <button mat-button (click)="onCancelClick()">ABBRECHEN</button>
+    <button mat-button color="primary" (click)="submit()">FILTER SETZEN</button>
 </div>

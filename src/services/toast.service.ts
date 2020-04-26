@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {
+    HttpClient,
+    HttpParams,
+    HttpHeaders,
+    HttpRequest,
+} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Toast } from 'src/models/toast.model';
 import { environment } from 'src/environments/environment';
@@ -12,7 +17,15 @@ export class ToastService {
 
     constructor(private httpClient: HttpClient) {}
 
-    public getRandomTrinkspruch(): Observable<Toast> {
-        return this.httpClient.get<Toast>(`${this.api}/GetRandom`);
+    public getRandomTrinkspruch(tagFilterIds: string[]): Observable<Toast> {
+        const headers = new HttpHeaders().set('tagIds', tagFilterIds.join(','));
+
+        const params = new HttpParams().set(
+            'tagIds',
+            JSON.stringify(tagFilterIds)
+        );
+        return this.httpClient.get<Toast>(`${this.api}/GetRandom/`, {
+            headers,
+        });
     }
 }
