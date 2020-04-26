@@ -1,36 +1,75 @@
-.main-container {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    grid-template-columns: 15% 1fr 15%;
-    grid-template-areas:
-        "    .   .  filter-cell"
-        ".   toast-cell next-toast-cell";
-    height: 100%;
-    align-items: stretch;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .main-container > div {
+        margin: 10px;
+    }
+    .filter-cell {
+        align-self: flex-end;
+        flex: 0 0 auto;
+    }
+
+    .toast-cell {
+        flex: 0 1 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .toast-text {
+        display: flex;
+        justify-content: center; /* align horizontal */
+        align-items: center; /* align vertical */
+    }
+    .next-toast-cell {
+        display: none;
+    }
+    .toast-text {
+        font-size: 1.25em;
+        text-align: center;
+        vertical-align: middle;
+    }
 }
 
-.filter-cell {
-    grid-area: filter-cell;
-    margin: 16px;
-    display: flex;
-    justify-content: flex-end;
-}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .main-container {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 15% 1fr 15%;
+        grid-template-areas:
+            "    .   .  filter-cell"
+            ".   toast-cell next-toast-cell";
+        height: 100%;
+        align-items: stretch;
+    }
 
-.toast-cell {
-    grid-area: toast-cell;
-    height: 100%;
+    .filter-cell {
+        grid-area: filter-cell;
+        margin: 16px;
+        display: flex;
+        justify-content: flex-end;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .toast-cell {
+        grid-area: toast-cell;
+        height: 100%;
 
-.next-toast-cell {
-    grid-area: next-toast-cell;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .next-toast-cell {
+        grid-area: next-toast-cell;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .mat-icon-button.large {
@@ -47,5 +86,8 @@
 }
 
 .toast-text {
-    font-size: 3vw;
+    font-size: 3em;
+    text-align: center;
+    vertical-align: middle;
+    text-shadow: 0 0 10px rgb(211, 211, 211);
 }

@@ -1,5 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {
+    BrowserModule,
+    HAMMER_GESTURE_CONFIG,
+    HammerGestureConfig,
+    HammerModule,
+} from '@angular/platform-browser';
+import { NgModule, Injectable } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +21,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ToastFilterComponent } from './toast-filter/toast-filter.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 
@@ -42,6 +46,7 @@ import { FormsModule } from '@angular/forms';
         MatCheckboxModule,
         MatSelectModule,
         FormsModule,
+        HammerModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

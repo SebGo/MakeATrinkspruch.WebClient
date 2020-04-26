@@ -12,9 +12,9 @@ import { Subscription, Observable } from 'rxjs';
     styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit, OnDestroy {
-    public toast$: Observable<Toast>;
-    public tagFilterIds: Array<string>;
     public subscriptions: Array<Subscription>;
+    public tagFilterIds: Array<string>;
+    public toast$: Observable<Toast>;
 
     constructor(
         public router: Router,
@@ -24,15 +24,24 @@ export class MainComponent implements OnInit, OnDestroy {
         this.subscriptions = new Array<Subscription>();
         this.tagFilterIds = new Array<string>();
     }
-    ngOnDestroy(): void {
+
+    public getNewToast() {
+        this.toast$ = this.toastService.getRandomTrinkspruch(this.tagFilterIds);
+    }
+
+    public ngOnDestroy(): void {
         this.subscriptions.forEach((s) => s.unsubscribe());
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.getNewToast();
     }
 
-    openFilterDialog() {
+    public onSwipeLeft($event) {
+        this.getNewToast();
+    }
+
+    public openFilterDialog() {
         const dialogConfig = new MatDialogConfig();
 
         dialogConfig.disableClose = true;
@@ -49,9 +58,5 @@ export class MainComponent implements OnInit, OnDestroy {
                 }
             })
         );
-    }
-
-    public getNewToast() {
-        this.toast$ = this.toastService.getRandomTrinkspruch(this.tagFilterIds);
     }
 }

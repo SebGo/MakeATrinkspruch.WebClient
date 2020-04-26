@@ -1,7 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+}
+
 .mat-toolbar {
     background-color: transparent;
 }
 
 #login-button {
     margin-left: 16px;
+}
+
+a:link,
+a:visited,
+a:active {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover {
+    color: lighten($color: #000000, $amount: 20%);
 }
